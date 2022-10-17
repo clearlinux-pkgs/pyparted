@@ -6,7 +6,7 @@
 #
 Name     : pyparted
 Version  : 3.12.0
-Release  : 3
+Release  : 4
 URL      : https://github.com/dcantrell/pyparted/releases/download/v3.12.0/pyparted-3.12.0.tar.gz
 Source0  : https://github.com/dcantrell/pyparted/releases/download/v3.12.0/pyparted-3.12.0.tar.gz
 Source1  : https://github.com/dcantrell/pyparted/releases/download/v3.12.0/pyparted-3.12.0.tar.gz.asc
