@@ -6,11 +6,11 @@
 # Source0 file verified with key 0x62977BB9C841B965 (dcantrel@redhat.com)
 #
 Name     : pyparted
-Version  : 3.12.0
-Release  : 6
-URL      : https://github.com/dcantrell/pyparted/releases/download/v3.12.0/pyparted-3.12.0.tar.gz
-Source0  : https://github.com/dcantrell/pyparted/releases/download/v3.12.0/pyparted-3.12.0.tar.gz
-Source1  : https://github.com/dcantrell/pyparted/releases/download/v3.12.0/pyparted-3.12.0.tar.gz.asc
+Version  : 3.13.0
+Release  : 7
+URL      : https://github.com/dcantrell/pyparted/releases/download/v3.13.0/pyparted-3.13.0.tar.gz
+Source0  : https://github.com/dcantrell/pyparted/releases/download/v3.13.0/pyparted-3.13.0.tar.gz
+Source1  : https://github.com/dcantrell/pyparted/releases/download/v3.13.0/pyparted-3.13.0.tar.gz.asc
 Summary  : Python bindings for GNU parted
 Group    : Development/Tools
 License  : GPL-2.0 GPL-2.0+
@@ -25,13 +25,14 @@ BuildRequires : pkgconfig(libparted)
 %define debug_package %{nil}
 
 %description
-pyparted
-Python bindings for libparted
------------------------------
-OVERVIEW
-pyparted is a set of native Python bindings for libparted.  libparted is the
-library portion of the GNU parted project.  With pyparted, you can write
-applications that interact with disk partition tables and filesystems.
+# pyparted
+## Python bindings for libparted
+---
+### Overview
+pyparted is a set of native Python bindings for libparted.  libparted
+is the library portion of the GNU parted project.  With pyparted, you
+can write applications that interact with disk partition tables and
+filesystems.
 
 %package license
 Summary: license components for the pyparted package.
@@ -61,10 +62,10 @@ python3 components for the pyparted package.
 
 
 %prep
-%setup -q -n pyparted-3.12.0
-cd %{_builddir}/pyparted-3.12.0
+%setup -q -n pyparted-3.13.0
+cd %{_builddir}/pyparted-3.13.0
 pushd ..
-cp -a pyparted-3.12.0 buildavx2
+cp -a pyparted-3.13.0 buildavx2
 popd
 
 %build
@@ -72,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1687226355
+export SOURCE_DATE_EPOCH=1687382932
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -97,7 +98,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pyparted
-cp %{_builddir}/pyparted-%{version}/COPYING %{buildroot}/usr/share/package-licenses/pyparted/075d599585584bb0e4b526f5c40cb6b17e0da35a || :
+cp %{_builddir}/pyparted-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pyparted/075d599585584bb0e4b526f5c40cb6b17e0da35a || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
