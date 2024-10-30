@@ -9,7 +9,7 @@
 #
 Name     : pyparted
 Version  : 3.13.0
-Release  : 8
+Release  : 9
 URL      : https://github.com/dcantrell/pyparted/releases/download/v3.13.0/pyparted-3.13.0.tar.gz
 Source0  : https://github.com/dcantrell/pyparted/releases/download/v3.13.0/pyparted-3.13.0.tar.gz
 Source1  : https://github.com/dcantrell/pyparted/releases/download/v3.13.0/pyparted-3.13.0.tar.gz.asc
